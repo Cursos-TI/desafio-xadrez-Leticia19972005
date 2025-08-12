@@ -1,43 +1,70 @@
 #include <stdio.h>
 
+void bispo (int a) {
+    if (a>0) {
+        int v = 1;
+        while (v<2)
+        {
+            int h = 0;
+            printf("Cima,");
+            v++;
+            
+            while (h<1)
+            {
+                printf("Direita\n");
+                h++;
+            }
+        }
+        bispo(a - 1);
+    }
+}
+void torre (int b) {
+    if (b > 0){
+        int d = 0;
+        while (d<1)
+        {
+            printf("Direita\n");
+            d++;
+        }
+        torre(b-1);
+    }
+}
+void rainha (int c) {
+    if (c > 0){
+        int e = 0;
+        while (e<1)
+        {
+            printf("Esquerda\n");
+            e++;
+        }
+        rainha(c-1);
+    }
+}
+
+
 int main() {
-    int t = 1;
-    int b = 1;
-    int e = 1;
-    int r;
 
     printf("Torre:\n");
-    while (t <= 5)
-    {
-        printf("Direita\n");
-        t++;
-    }
-
+    torre(5);
+    
     printf("\n");
     printf("Bispo:\n");
-    do
-    {
-        printf("Cima,Direita\n");
-        b++;
-    } while (b<=5);
+    bispo(5);
 
     printf("\n");
     printf("Rainha:\n");
-    for (r = 1; r <= 8; r++)
-    {
-        printf("Esquerda\n");
-    }
+    rainha(8);
+
     printf("\n");
     printf("Cavalo:\n");
-    for (int c = 1; c < 2; c++)
+    for (int u = 1, r = 10 ; u < r; u++, r--)
     {
-        while (e<=2)
-        {
-            printf("Baixo\n");
-            e++;
+        if (u<3){
+            printf("Cima\n");
         }
-        
-        printf("Esquerda\n");
+        if (r<7) {
+            printf("Direita\n");
+        }  
     }
     return 0;
 }
