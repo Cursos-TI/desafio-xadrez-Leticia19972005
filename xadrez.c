@@ -21,22 +21,14 @@ void bispo (int a) {
 void torre (int b) {
     if (b > 0){
         int d = 0;
-        while (d<1)
-        {
             printf("Direita\n");
-            d++;
-        }
         torre(b-1);
     }
 }
 void rainha (int c) {
     if (c > 0){
         int e = 0;
-        while (e<1)
-        {
             printf("Esquerda\n");
-            e++;
-        }
         rainha(c-1);
     }
 }
@@ -57,14 +49,12 @@ int main() {
 
     printf("\n");
     printf("Cavalo:\n");
-    for (int u = 1, r = 10 ; u < r; u++, r--)
-    {
-        if (u<3){
+    for (int u = 0; u < 2 ; u++){
             printf("Cima\n");
-        }
-        if (r<7) {
-            printf("Direita\n");
-        }  
+            if (u==1)
+            {
+                printf("Direita\n");
+            }  
     }
     return 0;
 }
